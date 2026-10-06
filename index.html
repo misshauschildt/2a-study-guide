@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auténtico 2 2A - Comprueba tus respuestas</title>
+<style>
+  body {
+    font-family: "Century Gothic", Arial, sans-serif;
+    background: #f6f7fb;
+    color: #111;
+    margin: 0;
+    padding: 24px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { text-align: center; margin-bottom: 8px; }
+  .intro { text-align: center; margin-bottom: 24px; }
+  .section {
+    background: white;
+    border: 2px solid #d9dce5;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .section button {
+    width: 100%;
+    border: 0;
+    background: #e9eefc;
+    color: #111;
+    padding: 18px 20px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+  }
+  .section button:hover { background: #dfe7fb; }
+  .answers {
+    display: none;
+    padding: 18px 28px 22px 38px;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .answers.open { display: block; }
+  .note { font-size: 15px; color: #444; margin-top: 10px; }
+  .topbutton {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 18px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #888;
+    border-radius: 8px;
+    background: white;
+  }
+  strong { font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Auténtico 2 2A — Comprueba tus respuestas</h1>
+  <p class="intro">Termina una sección antes de abrir su clave. Puedes revisar las secciones en cualquier orden.</p>
+  <button class="topbutton" onclick="hideAll()">Ocultar todas las respuestas</button>
+
+  <div class="section">
+    <button onclick="toggle('a', this)">A. Escuchar — Ver respuestas</button>
+    <div class="answers" id="a">
+      <p><strong>A = Fin de semana</strong><br><strong>B = De lunes a viernes</strong></p>
+      <ol start="6">
+        <li><strong>A</strong> — Fin de semana</li>
+        <li><strong>A</strong> — Fin de semana</li>
+        <li><strong>B</strong> — De lunes a viernes</li>
+        <li><strong>A</strong> — Fin de semana</li>
+        <li><strong>B</strong> — De lunes a viernes</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggle('b', this)">B. Lógico o ilógico — Ver respuestas</button>
+    <div class="answers" id="b">
+      <ol>
+        <li>Ilógico</li>
+        <li>Lógico</li>
+        <li>Lógico</li>
+        <li>Lógico</li>
+        <li>Ilógico</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggle('c', this)">C. Preguntas con fotos — Ver respuestas</button>
+    <div class="answers" id="c">
+      <ol>
+        <li>Va a llevar joyas de plata.</li>
+        <li>Uso una toalla para secarme el pelo.</li>
+        <li>Nosotros necesitamos un secador para secarnos el pelo.</li>
+        <li>Paulo se pone colonia.</li>
+        <li>Uso un cepillo para arreglarme el pelo.</li>
+      </ol>
+      <p class="note">Se aceptan respuestas completas equivalentes.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggle('d', this)">D. Verbos reflexivos — Ver respuestas</button>
+    <div class="answers" id="d">
+      <ol>
+        <li>me despierto</li>
+        <li>me levanto</li>
+        <li>se despierta</li>
+        <li>ducharse</li>
+        <li>me visto</li>
+        <li>te levantas</li>
+        <li>te cepillas</li>
+        <li>se pone</li>
+        <li>nos acostamos</li>
+        <li>nos acostamos</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggle('e', this)">E. Ser o estar — Ver respuestas</button>
+    <div class="answers" id="e">
+      <ol>
+        <li>son</li>
+        <li>es</li>
+        <li>estás</li>
+        <li>es</li>
+        <li>están</li>
+        <li>están</li>
+        <li>estamos</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggle('f', this)">F. Vocabulario — Ver respuestas</button>
+    <div class="answers" id="f">
+      <ol>
+        <li>cita</li>
+        <li>cepillarte</li>
+        <li>secador</li>
+        <li>maquillaje</li>
+        <li>collar</li>
+        <li>perfume / colonia</li>
+        <li>cepillo</li>
+        <li>desodorante</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggle('g', this)">G. Posesivos — Ver respuestas</button>
+    <div class="answers" id="g">
+      <ol>
+        <li><strong>nuestras</strong> (joyas)</li>
+        <li><strong>tuyos</strong> (zapatos)</li>
+        <li><strong>suyas</strong> (toallas)</li>
+        <li><strong>suyo</strong> (maquillaje)</li>
+        <li><strong>suyo</strong> (peine)</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggle('w', this)">Escribir — Ver lista de comprobación</button>
+    <div class="answers" id="w">
+      <p>No hay una sola respuesta correcta. Revisa que tu párrafo incluya:</p>
+      <ul>
+        <li>qué evento es y cuándo ocurre</li>
+        <li>cómo te preparas o te arreglas</li>
+        <li>por lo menos 3 verbos reflexivos</li>
+        <li>cómo te sientes antes del evento</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggle(id, button) {
+  const box = document.getElementById(id);
+  box.classList.toggle('open');
+  const title = button.textContent.split(' — ')[0];
+  button.textContent = box.classList.contains('open')
+    ? title + ' — Ocultar respuestas'
+    : title + ' — Ver respuestas';
+}
+function hideAll() {
+  document.querySelectorAll('.answers').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.section button').forEach(button => {
+    const title = button.textContent.split(' — ')[0];
+    button.textContent = title + (title === 'Escribir' ? ' — Ver lista de comprobación' : ' — Ver respuestas');
+  });
+}
+</script>
+</body>
+</html>
